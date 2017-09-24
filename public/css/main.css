@@ -1,0 +1,70 @@
+footer {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background-color: black;
+  color: white;
+}
+
+.jumbotron {
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-attachment: fixed;
+  color: white;
+}
+
+.showWithButtom li {
+  margin: 5px;
+  padding: 1em; 
+}
+
+.well ul li {
+  font-size: 2em;
+}
+
+#netContact {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  margin: 0px 0px 0px 0px;
+  background-color: orange;
+  color: black;
+}
+
+#netContact h1 > i {
+  color: red;
+}
+
+#headerProject {
+  background-image: url( "../img/moon.jpg" );
+  height:50vh;
+}
+
+#headerHaveFun {
+  background-color:BlueViolet;
+  margin-top:40px;
+  margin-bottom:0px;
+}
+
+#headerHome {
+  background-image:url( "../img/backgroidJumboTron.jpg"); 
+  height:80vh;
+}
+
+
+#timeLine {
+  background-image: url( "../img/backgroundTimeLine.jpg" );
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-attachment: fixed;
+}
+
+#reference li {
+  font-size: 120%;
+}
+
+#tableAttempts {
+  margin-bottom: 50px;
+}
