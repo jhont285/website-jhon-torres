@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 import Home from "./Home";
-
-const Roster = () => <div>Roster</div>;
-const Schedule = () => <div>Schedule</div>;
+import Projects from "./Projects";
+import HaveFun from "./HaveFun";
 
 class Section extends Component {
   render() {
@@ -11,8 +10,8 @@ class Section extends Component {
       <div>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/roster" component={Roster} />
-          <Route path="/schedule" component={Schedule} />
+          <Route path="/projects" component={Projects} />
+          <Route path="/haveFun" component={HaveFun} />
         </Switch>
       </div>
     );

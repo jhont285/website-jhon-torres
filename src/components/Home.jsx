@@ -295,7 +295,9 @@ const TimeLine = () => (
         className="btn btn-success"
         data-toggle="modal"
         data-target=".bs-example-modal-lg"
-      >Look at my timeline</button>
+      >
+        Look at my timeline
+      </button>
     </div>
     <div
       className="modal fade bs-example-modal-lg"
