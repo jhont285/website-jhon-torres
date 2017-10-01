@@ -16,7 +16,7 @@ footer {
 
 .showWithButtom li {
   margin: 5px;
-  padding: 1em; 
+  padding: 1em;
 }
 
 .well ul li {
@@ -24,6 +24,7 @@ footer {
 }
 
 #netContact {
+  margin-top: 2em !important;
   padding-top: 2em;
   padding-bottom: 2em;
   margin: 0px 0px 0px 0px;
@@ -47,7 +48,7 @@ footer {
 }
 
 #headerHome {
-  background-image:url( "../img/backgroidJumboTron.jpg"); 
+  background-image:url( "../img/backgroidJumboTron.jpg");
   height:80vh;
 }
 

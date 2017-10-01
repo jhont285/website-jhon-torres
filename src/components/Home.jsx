@@ -6,7 +6,7 @@ const Home = () => (
     <Jumbotron />
     <section className="container">
       <div className="row">
-        <div className="col-sm-4">
+        <div className="col-md-4">
           <MyPhotography />
           <TextMotivation />
           <hr />
@@ -14,12 +14,12 @@ const Home = () => (
           <hr />
           <Hobbies />
         </div>
-        <div className="col-sm-4">
+        <div className="col-md-4">
           <AboutMe />
           <hr />
           <Technologies />
         </div>
-        <div className="col-sm-4">
+        <div className="col-md-4">
           <Education />
           <hr />
           <Experience />

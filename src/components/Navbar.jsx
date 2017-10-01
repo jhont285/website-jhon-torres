@@ -1,5 +1,6 @@
-import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import React, { Component } from "react";
+import FontAwesome from "react-fontawesome";
 
 class Navbar extends Component {
   render() {
@@ -8,13 +9,20 @@ class Navbar extends Component {
       <nav className="navbar navbar-inverse navbar-fixed-top">
         <div className="container">
           <div className="navbar-header">
-            <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+            <button
+              type="button"
+              className="navbar-toggle collapsed"
+              data-toggle="collapse"
+              data-target="#bs-example-navbar-collapse-2"
+            >
               <span className="sr-only">Toggle navigation</span>
-              <span className="icon-bar"></span>
-              <span className="icon-bar"></span>
-              <span className="icon-bar"></span>
+              <span className="icon-bar" />
+              <span className="icon-bar" />
+              <span className="icon-bar" />
             </button>
-            <Link className="navbar-brand" to="/"> <span className="glyphicon glyphicon-send" aria-hidden="true"></span>&nbsp;Jhon Torres</Link>
+            <Link className="navbar-brand" to="/">
+              <span className="glyphicon glyphicon-send" aria-hidden="true" />&nbsp;Jhon Torres
+            </Link>
           </div>
 
           {/* <!-- items --> */}
@@ -23,17 +31,17 @@ class Navbar extends Component {
             <ul className="nav navbar-nav navbar-right">
               <li>
                 <Link to="/">
-                  <i className="fa fa-home" aria-hidden="true"></i> Home
+                  <FontAwesome name="home" /> Home
                 </Link>
               </li>
               <li>
-                <Link to="/roster">
-                  <i className="fa fa-keyboard-o" aria-hidden="true"></i> Projects
+                <Link to="/projects">
+                  <FontAwesome name="keyboard-o" /> Projects
                 </Link>
               </li>
               <li>
-                <Link to="/schedule">
-                  <i className="fa fa-gamepad" aria-hidden="true"></i> Have fun
+                <Link to="/haveFun">
+                  <FontAwesome name="gamepad" /> Have fun
                 </Link>
               </li>
             </ul>
