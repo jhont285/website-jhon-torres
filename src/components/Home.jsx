@@ -1,5 +1,18 @@
-import React from "react";
-import FontAwesome from "react-fontawesome";
+import React from 'react';
+import FontAwesome from 'react-fontawesome';
+
+import cartPhotography from '../img/cardPhotography.jpg';
+import logoUnal from '../img/logoUnal.png';
+import logoIndra from '../img/logoIndra.png';
+import logoSchool from '../img/logoSchool.jpeg';
+import logoSENA from '../img/logoSENA.png';
+import myCV from '../docs/CV.pdf';
+
+// icons technologies
+import tecLearning from './technologies/Learning.json';
+import tecIntermediate from './technologies/Intermediate.json';
+import tecGood from './technologies/Good.json';
+
 
 const Home = () => (
   <div>
@@ -47,7 +60,7 @@ const Jumbotron = () => (
 const MyPhotography = () => (
   <div>
     <img
-      src="img/foto%20andes.jpg"
+      src={cartPhotography}
       className="img-responsive img-circle"
       alt="my photography"
       width="100%"
@@ -132,12 +145,11 @@ const AboutMe = () => (
       About me <FontAwesome name="smile-o" />
     </h2>
     <div className="well">
-      <FontAwesome name="address-card" />
-      Jhon Emmanuel Torres Toloza
+      <FontAwesome name="address-card" /> Jhon Emmanuel Torres Toloza
     </div>
 
     <div className="well">
-      <FontAwesome name="user-circle-o" /> I am 24 years old
+      <FontAwesome name="user-circle-o" /> I am {new Date().getFullYear() - 1993} years old
     </div>
     <div className="well">
       <FontAwesome name="university" /> I am currently studying System and Computing Engineering
@@ -146,7 +158,7 @@ const AboutMe = () => (
       <FontAwesome name="map-marker" /> Bogotá, Colombia
     </div>
     <div className="text-center">
-      <a href="docs/CV.pdf" className="btn btn-primary" target="_blank">Download CV</a>
+      <a href={myCV} className="btn btn-primary" target="_blank">Download CV</a>
     </div>
   </div>
 );
@@ -160,38 +172,21 @@ const Technologies = () => (
     <div className="well">
       <ul className="list-inline">
         <li><FontAwesome name="linux" /></li>
-        <li><i className="icon-java" /></li>
-        <li><i className="icon-c" /></li>
-        <li><i className="icon-cplusplus" /></li>
-        <li><i className="icon-python" /></li>
+        {tecGood.map(item => <li><i className={item} /></li>)}
       </ul>
     </div>
 
     <h3>Intermediate Level</h3>
     <div className="well">
       <ul className="list-inline">
-        <li><FontAwesome name="html5" /></li>
-        <li><FontAwesome name="css3" /></li>
-        <li><i className="icon-mysql" /></li>
-        <li><i className="icon-postgres" /></li>
-        <li><i className="icon-phone-gap" /></li>
-        <li><i className="icon-csharp" /> </li>
-        <li><i className="icon-javascript" /></li>
-        <li><i className="icon-php" /></li>
-        <li><i className="icon-ruby" /></li>
-        <li><i className="icon-bootstrap" /></li>
-        <li><i className="icon-jquery" /></li>
+        {tecIntermediate.map(item => <li><i className={item} /></li>)}
       </ul>
     </div>
 
     <h3>Learning</h3>
     <div className="well">
       <ul className="list-inline">
-        <li><i className="icon-npm" /></li>
-        <li><i className="icon-angular" /></li>
-        <li><i className="icon-ruby-on-rails" /></li>
-        <li><i className="icon-reactjs" /></li>
-        <li><i className="icon-nodejs" /></li>
+        {tecLearning.map(item => <li><i className={item} /></li>)}
       </ul>
     </div>
   </div>
@@ -204,7 +199,7 @@ const Education = () => (
     <div className="row">
       <div className="col-xs-3">
         <img
-          src="img/alberto%20lleras%20camargo.jpeg"
+          src={logoSchool}
           alt="logo school"
           className="img-responsive img-circle"
         />
@@ -220,7 +215,7 @@ const Education = () => (
     <h3>Technical Institute <FontAwesome className="text-success" name="check" /></h3>
     <div className="row">
       <div className="col-xs-3">
-        <img src="img/sena_logo.png" alt="logo school" className="img-rounded img-responsive" />
+        <img src={logoSENA} alt="logo school" className="img-rounded img-responsive" />
       </div>
       <div className="col-xs-9">
         <ul>
@@ -234,7 +229,7 @@ const Education = () => (
     <div className="row">
       <div className="col-xs-3">
         <img
-          src="img/unal_logo.png"
+          src={logoUnal}
           alt="logo school"
           className="img-rounded img-responsive"
         />
@@ -247,8 +242,6 @@ const Education = () => (
         <p className="lead text-warning">In progress <strong>60%</strong></p>
       </div>
     </div>
-    <hr />
-
   </div>
 );
 
@@ -259,7 +252,7 @@ const Experience = () => (
     <h3>Practice SENA <FontAwesome className="text-success" name="check" /></h3>
     <div className="row">
       <div className="col-xs-3">
-        <img src="img/indra.png" alt="logo school" className="img-rounded img-responsive" />
+        <img src={logoIndra} alt="logo school" className="img-rounded img-responsive" />
       </div>
       <div className="col-xs-9">
         <ul>
@@ -273,7 +266,7 @@ const Experience = () => (
     <h3>My University <FontAwesome className="text-success" name="check" /></h3>
     <div className="row">
       <div className="col-xs-3">
-        <img src="img/unal_logo.png" alt="logo school" className="img-rounded img-responsive" />
+        <img src={logoUnal} alt="logo school" className="img-rounded img-responsive" />
       </div>
       <div className="col-xs-9">
         <ul>
@@ -283,7 +276,6 @@ const Experience = () => (
         </ul>
       </div>
     </div>
-
   </div>
 );
 
@@ -295,8 +287,7 @@ const TimeLine = () => (
         className="btn btn-success"
         data-toggle="modal"
         data-target=".bs-example-modal-lg"
-      >
-        Look at my timeline
+      > Look at my timeline
       </button>
     </div>
     <div

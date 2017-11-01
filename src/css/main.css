@@ -32,24 +32,35 @@ footer {
   color: black;
 }
 
-#netContact h1 > i {
-  color: red;
+#netContact h1 > span {
+  color: red !important;
 }
 
 #headerProject {
   background-image: url( "../img/moon.jpg" );
-  height:50vh;
+  height: 50vh;
 }
 
 #headerHaveFun {
-  background-color:BlueViolet;
-  margin-top:40px;
-  margin-bottom:0px;
+  background-color: BlueViolet;
+  margin-top: 40px;
+  margin-bottom: 0px;
 }
 
 #headerHome {
-  background-image:url( "../img/backgroidJumboTron.jpg");
-  height:80vh;
+  background-image: url( "../img/backgroidJumboTron.jpg");
+  height: 80vh;
+}
+
+#headerContact {
+  background-image: url( "../img/office.jpg");
+  height: 80vh;
+}
+
+#headerContact .row {
+  padding-top: 10rem;
+  color: black;
+  font-weight: bold;
 }
 
 

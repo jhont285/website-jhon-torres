@@ -1,4 +1,9 @@
-import React from "react";
+import React from 'react';
+
+import drunk from '../img/drunk.jpg';
+import numericsMethods from '../img/numerics_methods.jpg';
+import dataStructures from '../img/dataStructures.jpg';
+import translate from '../img/translate.jpg';
 
 const Projects = () => (
   <div>
@@ -40,7 +45,7 @@ const DrunkDriver = () => (
   <div>
     <div className="thumbnail">
       <img
-        src="img/drunk.jpg"
+        src={drunk}
         className="img-responsive img-rounded"
         width="100%"
         alt="projects"
@@ -99,7 +104,7 @@ const NumericalMethods = () => (
   <div>
     <div className="thumbnail">
       <img
-        src="img/numerics_methods.jpg"
+        src={numericsMethods}
         className="img-responsive img-rounded"
         width="100%"
         alt="projects"
@@ -138,7 +143,7 @@ const ProjectDS = () => (
   <div>
     <div className="thumbnail">
       <img
-        src="img/dataStructures.jpg"
+        src={dataStructures}
         className="img-responsive img-rounded"
         width="100%"
         alt="projects"
@@ -175,7 +180,7 @@ const TransaltorClojure = () => (
   <section>
     <div className="thumbnail">
       <img
-        src="img/translate.jpg"
+        src={translate}
         className="img-responsive img-rounded"
         width="100%"
         alt="projects"

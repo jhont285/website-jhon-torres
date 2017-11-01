@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import FontAwesome from "react-fontawesome";
+import React, { Component } from 'react';
+import FontAwesome from 'react-fontawesome';
 
 class Footer extends Component {
   render() {
@@ -33,13 +33,12 @@ class Footer extends Component {
               </div>
 
               <div className="col-md-6">
-                <h1 className="text-center">Contact</h1>
+                <h1 className="text-center">Put footer</h1>
 
                 <ul className="fa-ul" id="reference">
                   <li><i className="fa-li fa fa-map-marker" />Bogotá, Colombia</li>
                   <li><i className="fa-li fa fa-envelope-o" />jhont285@gmail.com</li>
                   <li><i className="fa-li fa fa-envelope-o" />jhetorresto@unal.edu.com</li>
-                  <li><i className="fa-li fa fa-envelope-o" />je.torres@uniandes.edu.co</li>
                   <li><i className="fa-li fa fa-phone" />680 80 80</li>
                   <li><i className="fa-li fa fa-mobile" />310 281 80 80</li>
                 </ul>

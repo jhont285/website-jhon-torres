@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import FontAwesome from "react-fontawesome";
-import swal from "sweetalert";
+import React, { Component } from 'react';
+import FontAwesome from 'react-fontawesome';
+import swal from 'sweetalert';
 
 class Game extends Component {
   constructor() {
@@ -11,7 +11,7 @@ class Game extends Component {
       gameBegin: false,
       attempts: null,
       currentAttempts: null,
-      possibleAnswer: "",
+      possibleAnswer: '',
       secretNumber: null,
       titleHint: [],
       hint: [],
@@ -46,7 +46,7 @@ class Game extends Component {
   getPossible(event) {
     const value = event.target.value.toString();
     if (value.length === 0) {
-      this.setState({ possibleAnswer: "" });
+      this.setState({ possibleAnswer: '' });
     } else {
       const lastElement = parseInt(value[value.length - 1], 10);
       if (value.length <= this.state.numberDigits && Number.isInteger(lastElement)) {
@@ -61,33 +61,33 @@ class Game extends Component {
 
   validateMove(event) {
     if (this.state.possibleAnswer.length !== this.state.secretNumber.length) {
-      swal("Oh no", "Please, write a number correct", "error");
+      swal('Oh no', 'Please, write a number correct', 'error');
     } else {
       this.setState({ currentAttempts: this.state.currentAttempts + 1 }, () => {
-        const win = this.state.possibleAnswer === this.state.secretNumber.join("");
+        const win = this.state.possibleAnswer === this.state.secretNumber.join('');
         const lost = this.state.currentAttempts === this.state.attempts;
         if (win) {
-          swal("You win!", `The secret number is ${this.state.secretNumber.join("")}`, "success");
+          swal('You win!', `The secret number is ${this.state.secretNumber.join('')}`, 'success');
         } else if (lost) {
-          swal("You lost!", `The secret number is ${this.state.secretNumber.join("")}`, "error");
+          swal('You lost!', `The secret number is ${this.state.secretNumber.join('')}`, 'error');
         }
         if (win || lost) {
           this.setState({
             gameBegin: !this.state.gameBegin,
-            possibleAnswer: "",
+            possibleAnswer: '',
             numberDigits: 1,
           });
         }
 
         const auxHint = this.state.secretNumber.map((item, index) => {
           if (item === this.state.possibleAnswer[index]) {
-            return "check";
+            return 'check';
           } else if (item > this.state.possibleAnswer[index]) {
-            return "arrow-up";
+            return 'arrow-up';
           }
-          return "arrow-down";
+          return 'arrow-down';
         });
-        this.setState({ hint: auxHint, titleHint: this.state.possibleAnswer.split("") });
+        this.setState({ hint: auxHint, titleHint: this.state.possibleAnswer.split('') });
       });
     }
     event.preventDefault();
@@ -95,7 +95,7 @@ class Game extends Component {
 
   render() {
     const title = !this.state.gameBegin
-      ? "Please select number length"
+      ? 'Please select number length'
       : `You have ${this.state.attempts - this.state.currentAttempts} attempts`;
 
     return (

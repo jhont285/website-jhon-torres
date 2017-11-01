@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
-import React, { Component } from "react";
-import FontAwesome from "react-fontawesome";
+import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
+import FontAwesome from 'react-fontawesome';
 
 class Navbar extends Component {
   render() {
@@ -42,6 +42,11 @@ class Navbar extends Component {
               <li>
                 <Link to="/haveFun">
                   <FontAwesome name="gamepad" /> Have fun
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact">
+                  <FontAwesome name="gamepad" /> Contact me
                 </Link>
               </li>
             </ul>

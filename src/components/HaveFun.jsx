@@ -1,7 +1,7 @@
-import React from "react";
-import FontAwesome from "react-fontawesome";
+import React from 'react';
+import FontAwesome from 'react-fontawesome';
 
-import Game from "./Game";
+import Game from './Game';
 
 const HaveFun = () => (
   <div>
@@ -23,9 +23,9 @@ const Header = () => (
   <header className="jumbotron" id="headerHaveFun">
     <div className="container">
       <div className="row">
-        <div className="col-xs-offset-2 col-xs-8">
-          <h1>Have fun</h1>
-          <p className="lead">with game &quot;Code puzzle&quot;</p>
+        <div className="col-xs-12">
+          <h1 className="text-center">Have fun</h1>
+          <p className="text-center lead">with game &quot;Code puzzle&quot;</p>
         </div>
       </div>
     </div>
