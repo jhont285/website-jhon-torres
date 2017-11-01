@@ -8,13 +8,6 @@
     "gh-pages": "^1.0.0",
     "husky": "^0.14.3",
     "jquery": "^3.2.1",
-    "lint-staged": {
-      "src/**/*.{js,jsx,json,css}": [
-        "prettier --single-quote --write",
-        "git add"
-      ]
-    },
-    "prettier": "^1.7.3",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-fontawesome": "^1.6.1",
@@ -35,8 +28,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "precommit": "lint-staged"
+    "deploy": "gh-pages -d build"
   },
   "homepage": "https://github.com/jhont285/mypersonalwebsite"
 }

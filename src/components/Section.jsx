@@ -10,7 +10,7 @@ class Section extends Component {
     return (
       <div>
         <Switch>
-          <Route path="/" component={Home} />
+          <Route exact path="/" component={Home} />
           <Route path="/projects" component={Projects} />
           <Route path="/haveFun" component={HaveFun} />
           <Route path="/contact" component={Contact} />
