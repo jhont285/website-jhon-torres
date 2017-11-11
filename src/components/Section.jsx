@@ -9,9 +9,9 @@ const Section = () => (
   <main>
     <Switch>
       <Route exact path={process.env.PUBLIC_URL + '/'} component={Home} />
-      <Route path={process.env.PUBLIC_URL + '/projects'} component={Projects} />
-      <Route path={process.env.PUBLIC_URL + '/haveFun'} component={HaveFun} />
-      <Route path={process.env.PUBLIC_URL + '/contact'} component={Contact} />
+      <Route path="/projects" component={Projects} />
+      <Route path="/haveFun" component={HaveFun} />
+      <Route path="/contact" component={Contact} />
     </Switch>
   </main>
 );

@@ -26,22 +26,22 @@ const Navbar = () => (
 
         <ul className="nav navbar-nav navbar-right">
           <li>
-            <Link to={process.env.PUBLIC_URL + '/'}>
+            <Link to="/">
               <FontAwesome name="home" /> Home
             </Link>
           </li>
           <li>
-            <Link to={process.env.PUBLIC_URL + '/projects'}>
+            <Link to="/projects">
               <FontAwesome name="keyboard-o" /> Projects
             </Link>
           </li>
           <li>
-            <Link to={process.env.PUBLIC_URL + '/haveFun'}>
+            <Link to="/haveFun">
               <FontAwesome name="gamepad" /> Have fun
             </Link>
           </li>
           <li>
-            <Link to={process.env.PUBLIC_URL + '/contact'}>
+            <Link to="/contact">
               <FontAwesome name="gamepad" /> Contact me
             </Link>
           </li>
@@ -50,6 +50,5 @@ const Navbar = () => (
     </div>
   </nav>
 );
-
 
 export default Navbar;
