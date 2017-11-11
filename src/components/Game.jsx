@@ -77,6 +77,7 @@ class Game extends Component {
             possibleAnswer: '',
             numberDigits: 1,
           });
+          window.scrollTo(0, 0);
         }
 
         const auxHint = this.state.secretNumber.map((item, index) => {

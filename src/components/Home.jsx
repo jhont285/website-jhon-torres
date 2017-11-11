@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
 
 import cartPhotography from '../img/cardPhotography.jpg';
@@ -13,36 +13,44 @@ import tecLearning from './technologies/Learning.json';
 import tecIntermediate from './technologies/Intermediate.json';
 import tecGood from './technologies/Good.json';
 
+class Home extends Component {
 
-const Home = () => (
-  <div>
-    <Jumbotron />
-    <section className="container">
-      <div className="row">
-        <div className="col-md-4">
-          <MyPhotography />
-          <TextMotivation />
-          <hr />
-          <MyLanguagues />
-          <hr />
-          <Hobbies />
-        </div>
-        <div className="col-md-4">
-          <AboutMe />
-          <hr />
-          <Technologies />
-        </div>
-        <div className="col-md-4">
-          <Education />
-          <hr />
-          <Experience />
-          <hr />
-          <TimeLine />
-        </div>
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
+  render () {
+    return (
+      <div>
+        <Jumbotron />
+        <section className="container">
+          <div className="row">
+            <div className="col-md-4">
+              <MyPhotography />
+              <TextMotivation />
+              <hr />
+              <MyLanguagues />
+              <hr />
+              <Hobbies />
+            </div>
+            <div className="col-md-4">
+              <AboutMe />
+              <hr />
+              <Technologies />
+            </div>
+            <div className="col-md-4">
+              <Education />
+              <hr />
+              <Experience />
+              <hr />
+              <TimeLine />
+            </div>
+          </div>
+        </section>
       </div>
-    </section>
-  </div>
-);
+    );
+  }
+}
 
 const Jumbotron = () => (
   <header className="jumbotron" id="headerHome">
@@ -172,21 +180,21 @@ const Technologies = () => (
     <div className="well">
       <ul className="list-inline">
         <li><FontAwesome name="linux" /></li>
-        {tecGood.map(item => <li><i className={item} /></li>)}
+        {tecGood.map(item => <li key={item}><i className={item} /></li>)}
       </ul>
     </div>
 
     <h3>Intermediate Level</h3>
     <div className="well">
       <ul className="list-inline">
-        {tecIntermediate.map(item => <li><i className={item} /></li>)}
+        {tecIntermediate.map(item => <li key={item}><i className={item} /></li>)}
       </ul>
     </div>
 
     <h3>Learning</h3>
     <div className="well">
       <ul className="list-inline">
-        {tecLearning.map(item => <li><i className={item} /></li>)}
+        {tecLearning.map(item => <li key={item}><i className={item} /></li>)}
       </ul>
     </div>
   </div>

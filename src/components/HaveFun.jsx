@@ -1,23 +1,32 @@
-import React from 'react';
+import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
 
 import Game from './Game';
 
-const HaveFun = () => (
-  <div>
-    <Header />
-    <div className="container">
-      <div className="row">
-        <div className="col-md-6">
-          <Description />
-        </div>
-        <div className="col-md-6">
-          <Game />
+class HaveFun extends Component {
+
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
+  render() {
+    return (
+      <div>
+        <Header />
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6">
+              <Description />
+            </div>
+            <div className="col-md-6">
+              <Game />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-);
+    );
+  }
+}
 
 const Header = () => (
   <header className="jumbotron" id="headerHaveFun">

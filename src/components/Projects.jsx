@@ -1,33 +1,42 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import drunk from '../img/drunk.jpg';
 import numericsMethods from '../img/numerics_methods.jpg';
 import dataStructures from '../img/dataStructures.jpg';
 import translate from '../img/translate.jpg';
 
-const Projects = () => (
-  <div>
-    <Header />
-    <div className="container">
-      <div className="row">
-        <div className="col-md-6">
-          <DrunkDriver />
-        </div>
-        <div className="col-md-6">
-          <NumericalMethods />
+class Projects extends Component {
+
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
+  render() {
+    return (
+      <div>
+        <Header />
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6">
+              <DrunkDriver />
+            </div>
+            <div className="col-md-6">
+              <NumericalMethods />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-6">
+              <ProjectDS />
+            </div>
+            <div className="col-md-6">
+              <TransaltorClojure />
+            </div>
+          </div>
         </div>
       </div>
-      <div className="row">
-        <div className="col-md-6">
-          <ProjectDS />
-        </div>
-        <div className="col-md-6">
-          <TransaltorClojure />
-        </div>
-      </div>
-    </div>
-  </div>
-);
+    );
+  }
+}
 
 const Header = () => (
   <header className="jumbotron" id="headerProject">

@@ -1,1 +1,12 @@
-["icon-java", "icon-c", "icon-cplusplus", "icon-python"]
+[
+  "icon-java",
+  "icon-c",
+  "icon-cplusplus",
+  "icon-python",
+  "icon-ruby",
+  "icon-ruby-on-rails",
+  "icon-javascript",
+  "icon-reactjs",
+  "icon-nodejs",
+  "icon-bootstrap"
+]

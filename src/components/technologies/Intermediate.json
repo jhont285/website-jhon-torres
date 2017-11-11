@@ -1,1 +1,8 @@
-["icon-mysql", "icon-postgres", "icon-phone-gap", "icon-csharp", "icon-javascript", "icon-php", "icon-ruby", "icon-bootstrap", "icon-jquery"]
+[
+  "icon-mysql",
+  "icon-postgres",
+  "icon-phone-gap",
+  "icon-csharp",
+  "icon-php",
+  "icon-jquery"
+]
