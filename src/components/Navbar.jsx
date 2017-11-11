@@ -26,22 +26,22 @@ const Navbar = () => (
 
         <ul className="nav navbar-nav navbar-right">
           <li>
-            <Link to="/">
+            <Link to={process.env.PUBLIC_URL + '/'}>
               <FontAwesome name="home" /> Home
             </Link>
           </li>
           <li>
-            <Link to="/projects">
+            <Link to={process.env.PUBLIC_URL + '/projects'}>
               <FontAwesome name="keyboard-o" /> Projects
             </Link>
           </li>
           <li>
-            <Link to="/haveFun">
+            <Link to={process.env.PUBLIC_URL + '/haveFun'}>
               <FontAwesome name="gamepad" /> Have fun
             </Link>
           </li>
           <li>
-            <Link to="/contact">
+            <Link to={process.env.PUBLIC_URL + '/contact'}>
               <FontAwesome name="gamepad" /> Contact me
             </Link>
           </li>
