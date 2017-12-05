@@ -9,7 +9,7 @@ import NotFound from './NotFound';
 
 const Section = () => (
   <main>
-    <Switch basename={process.env.PUBLIC_URL}>
+    <Switch>
       <Route exact path="/" component={Home} />
       <Route path="/projects" component={Projects} />
       <Route path="/haveFun" component={HaveFun} />
