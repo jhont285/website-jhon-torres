@@ -1,6 +1,6 @@
 [
+  "icon-debian",
   "icon-java",
-  "icon-c",
   "icon-cplusplus",
   "icon-python",
   "icon-ruby",
@@ -8,5 +8,8 @@
   "icon-javascript",
   "icon-reactjs",
   "icon-nodejs",
-  "icon-bootstrap"
+  "icon-bootstrap",
+  "icon-npm",
+  "icon-git",
+  "icon-jquery"
 ]

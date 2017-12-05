@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
 
+// images and cv in pdf
 import cartPhotography from '../img/cardPhotography.jpg';
 import logoUnal from '../img/logoUnal.png';
 import logoIndra from '../img/logoIndra.png';
@@ -14,12 +15,11 @@ import tecIntermediate from './technologies/Intermediate.json';
 import tecGood from './technologies/Good.json';
 
 class Home extends Component {
-
   componentDidMount() {
     window.scrollTo(0, 0);
   }
 
-  render () {
+  render() {
     return (
       <div>
         <Jumbotron />
@@ -87,11 +87,11 @@ const TextMotivation = () => (
           size="3x"
           border
         />
-        Hi! In this website you can see my perfil professional.
+        Hi! In this website you can see my profile professional.
         My biggest passion now is to program because I can build
         things awesome. I like learning new technologies because
         these have interesting things. Lately, I am interested in
-        the marathones of programming, as it is a way to learn and
+        the competitive programing, as it is a way to learn and
         have fun.
       </p>
     </div>
@@ -101,7 +101,7 @@ const TextMotivation = () => (
 const MyLanguagues = () => (
   <div>
     <h2 className="text-center">
-      Languagues <FontAwesome name="Language" />
+      Languagues <FontAwesome name="language" />
     </h2>
     <div className="table-responsive">
       <table className="table table-hover table-bordered">
@@ -150,14 +150,14 @@ const Hobbies = () => (
 const AboutMe = () => (
   <div>
     <h2 className="text-center">
-      About me <FontAwesome name="smile-o" />
+      About me <FontAwesome name="info-circle" />
     </h2>
     <div className="well">
       <FontAwesome name="address-card" /> Jhon Emmanuel Torres Toloza
     </div>
 
     <div className="well">
-      <FontAwesome name="user-circle-o" /> I am {new Date().getFullYear() - 1993} years old
+      <FontAwesome name="user-circle-o" /> I am {parseInt((new Date() - new Date(1993, 0, 28)) / 31557600000, 10)} years old
     </div>
     <div className="well">
       <FontAwesome name="university" /> I am currently studying System and Computing Engineering
@@ -179,22 +179,21 @@ const Technologies = () => (
     <h3>Good Level</h3>
     <div className="well">
       <ul className="list-inline">
-        <li><FontAwesome name="linux" /></li>
-        {tecGood.map(item => <li key={item}><i className={item} /></li>)}
+        {tecGood.map(item => (<li key={item} className="btn btn-link" data-toggle="tooltip" data-placement="top" title={item.split('-')[1]}> <i className={item} /></li>))}
       </ul>
     </div>
 
     <h3>Intermediate Level</h3>
     <div className="well">
       <ul className="list-inline">
-        {tecIntermediate.map(item => <li key={item}><i className={item} /></li>)}
+        {tecIntermediate.map(item => <li key={item} className="btn btn-link" data-toggle="tooltip" data-placement="top" title={item.split('-')[1]}><i className={item} /></li>)}
       </ul>
     </div>
 
     <h3>Learning</h3>
     <div className="well">
       <ul className="list-inline">
-        {tecLearning.map(item => <li key={item}><i className={item} /></li>)}
+        {tecLearning.map(item => <li key={item} className="btn btn-link" data-toggle="tooltip" data-placement="top" title={item.split('-')[1]}><i className={item} /></li>)}
       </ul>
     </div>
   </div>

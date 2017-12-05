@@ -6,7 +6,6 @@ import dataStructures from '../img/dataStructures.jpg';
 import translate from '../img/translate.jpg';
 
 class Projects extends Component {
-
   componentDidMount() {
     window.scrollTo(0, 0);
   }

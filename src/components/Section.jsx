@@ -4,14 +4,17 @@ import Home from './Home';
 import Projects from './Projects';
 import HaveFun from './HaveFun';
 import Contact from './Contact';
+import NotFound from './NotFound';
+
 
 const Section = () => (
   <main>
     <Switch>
-      <Route exact path={process.env.PUBLIC_URL + '/'} component={Home} />
+      <Route exact path="/" component={Home} />
       <Route path="/projects" component={Projects} />
       <Route path="/haveFun" component={HaveFun} />
       <Route path="/contact" component={Contact} />
+      <Route component={NotFound} />
     </Switch>
   </main>
 );

@@ -4,7 +4,6 @@ import FontAwesome from 'react-fontawesome';
 import Game from './Game';
 
 class HaveFun extends Component {
-
   componentDidMount() {
     window.scrollTo(0, 0);
   }

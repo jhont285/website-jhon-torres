@@ -32,12 +32,12 @@ footer {
   color: black;
 }
 
-#netContact h1 > span {
+#netContact h1>span {
   color: red !important;
 }
 
 #headerProject {
-  background-image: url( "../img/moon.jpg" );
+  background-image: url("../img/moon.jpg");
   height: 50vh;
 }
 
@@ -48,14 +48,22 @@ footer {
 }
 
 #headerHome {
-  background-image: url( "../img/backgroidJumboTron.jpg");
+  background-image: url("../img/backgroidJumboTron.jpg");
   height: 80vh;
 }
 
 #headerContact {
-  background-image: url( "../img/office.jpg");
+  background-image: url("../img/office.jpg");
   height: 80vh;
 }
+
+#notFound {
+  padding-top: 40rem;
+  color: black;
+  background-image: url("../img/puzzle.jpg");
+  height: 100vh;
+}
+
 
 #headerContact .row {
   padding-top: 10rem;
@@ -63,9 +71,8 @@ footer {
   font-weight: bold;
 }
 
-
 #timeLine {
-  background-image: url( "../img/backgroundTimeLine.jpg" );
+  background-image: url("../img/backgroundTimeLine.jpg");
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
