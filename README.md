@@ -1,8 +1,8 @@
-# My personal WebSite
+# [My personal WebSite](http://website-jhon-torres.s3-website-sa-east-1.amazonaws.com/)
 
 ## Synopsis
 
-In this reposity is the first project proposed for the teacher "John Alexin Guerra" for the subject "Programacion de tecnologias Web" of the college "Universidad de los Andes".
+In this reposity is the first project proposed for the teacher "John Alexis Guerra" for the subject "Programacion de tecnologias Web" of the college "Universidad de los Andes".
 
 ## Technology Used
 
