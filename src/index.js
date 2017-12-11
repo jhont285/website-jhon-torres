@@ -3,16 +3,23 @@ import { BrowserRouter } from 'react-router-dom';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+// js
+// import 'jquery/dist/jquery.min';
 import 'bootstrap/dist/js/bootstrap.min';
+
+// css
+import 'bootswatch/cosmo/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
-import './css/bootstrap.min.css';
+import 'font-mfizz/dist/font-mfizz.css';
 import './css/main.css';
 import './css/timeline.css';
-import './font-mfizz/font-mfizz.css';
 
+// test
 import registerServiceWorker from './registerServiceWorker';
 
+// Main Component
 import App from './App';
+
 
 ReactDOM.render(
   <BrowserRouter>

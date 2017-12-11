@@ -24,8 +24,14 @@ class Contact extends Component {
   }
 
   handleSubmit(event) {
-    swal('Email was send successfull!!!');
-    this.setState({ name: '', email: '', phone: '', message: '' });
+    console.log(this.state);
+    if (this.state.message.length && this.state.name.length && this.state.phone.length && this.state.message.length) {
+      swal('Email was send successfull!!!');
+
+      this.setState({ name: '', email: '', phone: '', message: '' });
+    } else {
+      swal('All fields are necessary!!!');
+    }
     event.preventDefault();
   }
 
@@ -42,7 +48,8 @@ class Contact extends Component {
                 I will try to get back to you within 24 hours!
               </p>
               <form onSubmit={this.handleSubmit}>
-                <div className="form-group">
+                <div className="form-group has-error">
+                  
                   <label htmlFor="userName">Name</label>
                   <input
                     type="text"
@@ -51,7 +58,10 @@ class Contact extends Component {
                     name="name"
                     value={this.state.name}
                     onChange={this.handleChange}
+                    // aria-describedby="helpBlock2"
                   />
+
+                  <span id="helpBlock2" className="help-block">El nombre es necesario</span>
                 </div>
                 <div className="form-group">
                   <label htmlFor="userEmail">Email Address</label>
