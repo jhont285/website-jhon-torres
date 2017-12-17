@@ -80,4 +80,7 @@ typings/
 # dotenv environment variables file
 .env
 
+# webstorm
+.idea
+
 >>>>>>> 2432075b673db35a00339a61fd38463c214e5dd1

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
 import swal from 'sweetalert';
+import validator from 'validator';
 
 class Contact extends Component {
   constructor() {
@@ -10,8 +11,13 @@ class Contact extends Component {
       email: '',
       phone: '',
       message: '',
+      hasErrorName: false,
+      hasErrorEmail: false,
+      hasErrorPhone: false,
+      hasErrorMessage: false,
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleChangeInput = this.handleChangeInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -23,16 +29,35 @@ class Contact extends Component {
     this.setState({ [event.target.name]: event.target.value });
   }
 
-  handleSubmit(event) {
-    console.log(this.state);
-    if (this.state.message.length && this.state.name.length && this.state.phone.length && this.state.message.length) {
-      swal('Email was send successfull!!!');
+  handleChangeInput(event) {
+    const word = event.target.name;
+    this.setState({ [`hasError${word.charAt(0).toUpperCase() + word.slice(1)}`]: false });
+  }
 
-      this.setState({ name: '', email: '', phone: '', message: '' });
-    } else {
-      swal('All fields are necessary!!!');
-    }
+  async handleSubmit(event) {
     event.preventDefault();
+    if (!this.state.name.length || !validator.isAscii(this.state.name)) {
+      await this.setState({ hasErrorName: true });
+    }
+    if (!this.state.email.length || !validator.isEmail(this.state.email)) {
+      await this.setState({ hasErrorEmail: true });
+    }
+    if (!this.state.phone.length || !validator.isNumeric(this.state.phone)) {
+      await this.setState({ hasErrorPhone: true });
+    }
+    if (!this.state.message.length || !validator.isAscii(this.state.message)) {
+      await this.setState({ hasErrorMessage: true });
+    }
+
+    console.log(this.state);
+    const fields = ['Name', 'Email', 'Phone', 'Message'];
+    if (fields.every(item => !this.state[`hasError${item}`])) {
+      swal('Email was send successfull!!!');
+      fields.forEach(item => this.setState({ [item.toLowerCase()]: '' }));
+      fields.forEach(item => this.setState({ [`hasError${item}`]: false }));
+    } else {
+      swal('There are one or more errors');
+    }
   }
 
   render() {
@@ -47,9 +72,10 @@ class Contact extends Component {
                 the form below to send me a message and
                 I will try to get back to you within 24 hours!
               </p>
+
               <form onSubmit={this.handleSubmit}>
-                <div className="form-group has-error">
-                  
+                <div className={!this.state.hasErrorName ? 'form-group' : 'form-group has-error'}>
+
                   <label htmlFor="userName">Name</label>
                   <input
                     type="text"
@@ -58,12 +84,16 @@ class Contact extends Component {
                     name="name"
                     value={this.state.name}
                     onChange={this.handleChange}
-                    // aria-describedby="helpBlock2"
+                    onClick={this.handleChangeInput}
                   />
 
-                  <span id="helpBlock2" className="help-block">El nombre es necesario</span>
+                  {
+                    !this.state.hasErrorName ||
+                    <span className="help-block"> * The name is empty or is invalid</span>
+                  }
+
                 </div>
-                <div className="form-group">
+                <div className={!this.state.hasErrorEmail ? 'form-group' : 'form-group has-error'}>
                   <label htmlFor="userEmail">Email Address</label>
                   <input
                     type="email"
@@ -72,9 +102,16 @@ class Contact extends Component {
                     name="email"
                     value={this.state.email}
                     onChange={this.handleChange}
+                    onClick={this.handleChangeInput}
                   />
+
+                  {
+                    !this.state.hasErrorEmail ||
+                    <span className="help-block"> * The email is empty or is invalid</span>
+                  }
+
                 </div>
-                <div className="form-group">
+                <div className={!this.state.hasErrorPhone ? 'form-group' : 'form-group has-error'}>
                   <label htmlFor="userPhone">Phone Number</label>
                   <input
                     type="tel"
@@ -83,9 +120,16 @@ class Contact extends Component {
                     name="phone"
                     value={this.state.phone}
                     onChange={this.handleChange}
+                    onClick={this.handleChangeInput}
                   />
+
+                  {
+                    !this.state.hasErrorPhone ||
+                    <span className="help-block"> * The phone is empty or isn&apos;t a number</span>
+                  }
+
                 </div>
-                <div className="form-group">
+                <div className={!this.state.hasErrorMessage ? 'form-group' : 'form-group has-error'}>
                   <label htmlFor="userMessage">Message</label>
                   <div className="row">
                     <div className="col-xs-12">
@@ -96,7 +140,16 @@ class Contact extends Component {
                         name="message"
                         value={this.state.message}
                         onChange={this.handleChange}
+                        onClick={this.handleChangeInput}
                       />
+
+                      {
+                        !this.state.hasErrorMessage ||
+                        <span className="help-block">
+                          * The message is empty or isn&apos;t invalid
+                        </span>
+                      }
+
                     </div>
                   </div>
                 </div>

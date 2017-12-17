@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 
 // js
 // import 'jquery/dist/jquery.min';
-import 'bootstrap/dist/js/bootstrap.min';
+// import 'bootstrap/dist/js/bootstrap.min';
 
 // css
 import 'bootswatch/cosmo/bootstrap.min.css';

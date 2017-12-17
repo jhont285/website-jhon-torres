@@ -13,7 +13,7 @@ const Footer = () => (
             </h1>
             <ul className="text-center list-inline">
               <li>
-                <a href="https://github.com/JhonEmmanuelTorres" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/jhont285" target="_blank" rel="noopener noreferrer">
                   <FontAwesome name="github" size="4x" />
                 </a>
               </li>
