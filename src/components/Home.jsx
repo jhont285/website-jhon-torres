@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
+import { Modal } from 'react-bootstrap';
 
 // images and cv in pdf
 import cartPhotography from '../img/cardPhotography.jpg';
@@ -15,8 +16,23 @@ import tecIntermediate from './technologies/Intermediate.json';
 import tecGood from './technologies/Good.json';
 
 class Home extends Component {
+  constructor() {
+    super();
+    this.state = { isOpenModal: false };
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
+
   componentDidMount() {
     window.scrollTo(0, 0);
+  }
+
+  openModal() {
+    this.setState({ isOpenModal: true });
+  }
+
+  closeModal() {
+    this.setState({ isOpenModal: false });
   }
 
   render() {
@@ -43,7 +59,26 @@ class Home extends Component {
               <hr />
               <Experience />
               <hr />
-              <TimeLine />
+
+              <h2 className="text-center">Time Lime Hobbies <FontAwesome name="calendar-times-o" /></h2>
+              <br />
+
+              <div className="text-center">
+                <button
+                  type="button"
+                  className="btn btn-success pulse-success"
+                  onClick={this.openModal} bsSize="lg"
+                >
+                  Look at my timeline
+                </button>
+              </div>
+
+              <Modal show={this.state.isOpenModal} onHide={this.closeModal} bsSize="lg">
+                <Modal.Body className="timeLine">
+                  <TimeLine />
+                </Modal.Body>
+              </Modal>
+
             </div>
           </div>
         </section>
@@ -66,14 +101,12 @@ const Jumbotron = () => (
 );
 
 const MyPhotography = () => (
-  <div>
-    <img
-      src={cartPhotography}
-      className="img-responsive img-circle"
-      alt="my photography"
-      width="100%"
-    />
-  </div>
+  <img
+    src={cartPhotography}
+    className="img-responsive img-circle"
+    alt="my photography"
+    width="100%"
+  />
 );
 
 const TextMotivation = () => (
@@ -119,10 +152,6 @@ const MyLanguagues = () => (
           <tr>
             <td>English</td>
             <td>A2</td>
-          </tr>
-          <tr>
-            <td>Italian</td>
-            <td>Learning</td>
           </tr>
         </tbody>
       </table>
@@ -246,7 +275,7 @@ const Education = () => (
           <li>National University of Colombia</li>
           <li><strong>Undegree:</strong> System and Computing Engineering</li>
         </ul>
-        <p className="lead text-warning">In progress <strong>60%</strong></p>
+        <p className="lead text-warning">In progress <strong>70%</strong></p>
       </div>
     </div>
   </div>
@@ -287,140 +316,113 @@ const Experience = () => (
 );
 
 const TimeLine = () => (
-  <div>
-    <div className="text-center">
-      <button
-        type="button"
-        className="btn btn-success"
-        data-toggle="modal"
-        data-target=".bs-example-modal-lg"
-      > Look at my timeline
-      </button>
-    </div>
-    <div
-      className="modal fade bs-example-modal-lg"
-      tabIndex="-1"
-      role="dialog"
-      aria-labelledby="myLargeModalLabel"
-    >
-
-      <div className="modal-dialog modal-lg" role="document">
-        <div className="modal-content">
-
-          <div className="modal-body" id="timeLine">
-
-            <ul className="timeline">
-              <li>
-                <div className="timeline-badge">
-                  <FontAwesome name="graduation-cap" />
-                </div>
-                <div className="timeline-panel">
-                  <div className="timeline-heading">
-                    <h4 className="timeline-title">December 2009</h4>
-                  </div>
-                  <div className="timeline-body">
-                    <p>I graduated from school Alberto Lleras Camargo</p>
-                  </div>
-                </div>
-              </li>
-
-              <li className="timeline-inverted">
-                <div className="timeline-badge warning">
-                  <FontAwesome name="book" />
-                </div>
-                <div className="timeline-panel">
-                  <div className="timeline-heading">
-                    <h4 className="timeline-title">March 2010</h4>
-                  </div>
-                  <div className="timeline-body">
-                    <p>I went to study at the SENA: &quot;System Technique&quot;</p>
-                  </div>
-                </div>
-              </li>
-
-              <li>
-                <div className="timeline-badge danger">
-                  <FontAwesome name="graduation-cap" />
-                </div>
-                <div className="timeline-panel">
-                  <div className="timeline-heading">
-                    <h4 className="timeline-title">April 2011</h4>
-                  </div>
-                  <div className="timeline-body">
-                    <p>I graduated from SENA like &quot;System Technique&quot;</p>
-                  </div>
-                </div>
-              </li>
-
-              <li className="timeline-inverted">
-                <div className="timeline-badge success">
-                  <FontAwesome name="briefcase" />
-                </div>
-                <div className="timeline-panel">
-                  <div className="timeline-heading">
-                    <h4 className="timeline-title">June 2011</h4>
-                  </div>
-                  <div className="timeline-body">
-                    <p>Practice SENA. <strong>Duration 3 months</strong></p>
-                  </div>
-                </div>
-              </li>
-
-              <li>
-                <div className="timeline-badge">
-                  <FontAwesome name="book" />
-                </div>
-                <div className="timeline-panel">
-                  <div className="timeline-heading">
-                    <h4 className="timeline-title">June 2012</h4>
-                  </div>
-                  <div className="timeline-body">
-                    <p>I went to study at the Institude &quot;Escala&quot;</p>
-                  </div>
-                </div>
-              </li>
-
-              <li className="timeline-inverted">
-                <div className="timeline-badge warning">
-                  <FontAwesome name="university" />
-                </div>
-                <div className="timeline-panel">
-                  <div className="timeline-heading">
-                    <h4 className="timeline-title">February 2013</h4>
-                  </div>
-                  <div className="timeline-body">
-                    <p>
-                      I went to study at the National University
-                      of Colombia at Bogotá: &quot;System and
-                      Computing Engineering&quot;.
-                    </p>
-                  </div>
-                </div>
-              </li>
-
-              <li>
-                <div className="timeline-badge danger">
-                  <FontAwesome name="briefcase" />
-                </div>
-                <div className="timeline-panel">
-                  <div className="timeline-heading">
-                    <h4 className="timeline-title">August 2016</h4>
-                  </div>
-                  <div className="timeline-body">
-                    <p>
-                      I worked as a computer monitor in the subject:
-                      &quot;Jose Celestino Mutis&quot;.
-                      <strong>Duration 5 months</strong>
-                    </p>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
+  <ul className="timeline">
+    <li>
+      <div className="timeline-badge">
+        <FontAwesome name="graduation-cap" />
+      </div>
+      <div className="timeline-panel">
+        <div className="timeline-heading">
+          <h4 className="timeline-title">December 2009</h4>
+        </div>
+        <div className="timeline-body">
+          <p>I graduated from school Alberto Lleras Camargo</p>
         </div>
       </div>
-    </div>
-  </div>
+    </li>
+
+    <li className="timeline-inverted">
+      <div className="timeline-badge warning">
+        <FontAwesome name="book" />
+      </div>
+      <div className="timeline-panel">
+        <div className="timeline-heading">
+          <h4 className="timeline-title">March 2010</h4>
+        </div>
+        <div className="timeline-body">
+          <p>I went to study at the SENA: &quot;System Technique&quot;</p>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <div className="timeline-badge danger">
+        <FontAwesome name="graduation-cap" />
+      </div>
+      <div className="timeline-panel">
+        <div className="timeline-heading">
+          <h4 className="timeline-title">April 2011</h4>
+        </div>
+        <div className="timeline-body">
+          <p>I graduated from SENA like &quot;System Technique&quot;</p>
+        </div>
+      </div>
+    </li>
+
+    <li className="timeline-inverted">
+      <div className="timeline-badge success">
+        <FontAwesome name="briefcase" />
+      </div>
+      <div className="timeline-panel">
+        <div className="timeline-heading">
+          <h4 className="timeline-title">June 2011</h4>
+        </div>
+        <div className="timeline-body">
+          <p>Practice SENA. <strong>Duration 3 months</strong></p>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <div className="timeline-badge">
+        <FontAwesome name="book" />
+      </div>
+      <div className="timeline-panel">
+        <div className="timeline-heading">
+          <h4 className="timeline-title">June 2012</h4>
+        </div>
+        <div className="timeline-body">
+          <p>I went to study at the Institude &quot;Escala&quot;</p>
+        </div>
+      </div>
+    </li>
+
+    <li className="timeline-inverted">
+      <div className="timeline-badge warning">
+        <FontAwesome name="university" />
+      </div>
+      <div className="timeline-panel">
+        <div className="timeline-heading">
+          <h4 className="timeline-title">February 2013</h4>
+        </div>
+        <div className="timeline-body">
+          <p>
+            I went to study at the National University
+            of Colombia at Bogotá: &quot;System and
+            Computing Engineering&quot;.
+          </p>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <div className="timeline-badge danger">
+        <FontAwesome name="briefcase" />
+      </div>
+      <div className="timeline-panel">
+        <div className="timeline-heading">
+          <h4 className="timeline-title">August 2016</h4>
+        </div>
+        <div className="timeline-body">
+          <p>
+            I worked as a computer monitor in the subject:
+            &quot;Jose Celestino Mutis&quot;.
+            <strong>Duration 5 months</strong>
+          </p>
+        </div>
+      </div>
+    </li>
+  </ul>
 );
 
 export default Home;
