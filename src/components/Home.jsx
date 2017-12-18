@@ -60,14 +60,17 @@ class Home extends Component {
               <Experience />
               <hr />
 
-              <h2 className="text-center">Time Lime Hobbies <FontAwesome name="calendar-times-o" /></h2>
+              <h2 className="text-center">
+                Time Lime Hobbies <FontAwesome name="calendar-times-o" />
+              </h2>
               <br />
 
               <div className="text-center">
                 <button
                   type="button"
                   className="btn btn-success pulse-success"
-                  onClick={this.openModal} bsSize="lg"
+                  onClick={this.openModal}
+                  bsSize="lg"
                 >
                   Look at my timeline
                 </button>
@@ -208,21 +211,21 @@ const Technologies = () => (
     <h3>Good Level</h3>
     <div className="well">
       <ul className="list-inline">
-        {tecGood.map(item => (<li key={item} className="btn btn-link" data-toggle="tooltip" data-placement="top" title={item.split('-')[1]}> <i className={item} /></li>))}
+        {tecGood.map(item => (<li key={item} className="btn btn-link" data-toggle="tooltip" data-placement="top" title={item.split('-').slice(1).join(' ')}> <i className={item} /></li>))}
       </ul>
     </div>
 
     <h3>Intermediate Level</h3>
     <div className="well">
       <ul className="list-inline">
-        {tecIntermediate.map(item => <li key={item} className="btn btn-link" data-toggle="tooltip" data-placement="top" title={item.split('-')[1]}><i className={item} /></li>)}
+        {tecIntermediate.map(item => <li key={item} className="btn btn-link" data-toggle="tooltip" data-placement="top" title={item.split('-').slice(1).join(' ')}><i className={item} /></li>)}
       </ul>
     </div>
 
     <h3>Learning</h3>
     <div className="well">
       <ul className="list-inline">
-        {tecLearning.map(item => <li key={item} className="btn btn-link" data-toggle="tooltip" data-placement="top" title={item.split('-')[1]}><i className={item} /></li>)}
+        {tecLearning.map(item => <li key={item} className="btn btn-link" data-toggle="tooltip" data-placement="top" title={item.split('-').slice(1).join(' ')}><i className={item} /></li>)}
       </ul>
     </div>
   </div>
