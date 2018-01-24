@@ -127,7 +127,7 @@ const TextMotivation = () => (
         My biggest passion now is to program because I can build
         things awesome. I like learning new technologies because
         these have interesting things. Lately, I am interested in
-        the competitive programing, as it is a way to learn and
+        the competitive programming, as it is a way to learn and
         have fun.
       </p>
     </div>

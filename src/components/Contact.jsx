@@ -49,7 +49,6 @@ class Contact extends Component {
       await this.setState({ hasErrorMessage: true });
     }
 
-    console.log(this.state);
     const fields = ['Name', 'Email', 'Phone', 'Message'];
     if (fields.every(item => !this.state[`hasError${item}`])) {
       swal('Email was send successfull!!!');
